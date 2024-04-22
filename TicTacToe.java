@@ -89,6 +89,8 @@ public class TicTacToe implements ActionListener {
 
     public void checkresult() {
 
+        // winning conditions for 'X'
+
         if (buttons[0].getText() == "X" && buttons[1].getText() == "X" && buttons[2].getText() == "X"
                 && player2turn == true) {
 
@@ -201,6 +203,120 @@ public class TicTacToe implements ActionListener {
 
         }
 
+        // winning conditions for 'O'
+
+        if (buttons[0].getText() == "O" && buttons[1].getText() == "O" && buttons[2].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
+        if (buttons[3].getText() == "O" && buttons[4].getText() == "O" && buttons[5].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
+        if (buttons[6].getText() == "O" && buttons[7].getText() == "O" && buttons[8].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
+        if (buttons[0].getText() == "O" && buttons[3].getText() == "O" && buttons[6].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
+        if (buttons[1].getText() == "O" && buttons[4].getText() == "O" && buttons[7].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
+        if (buttons[2].getText() == "O" && buttons[5].getText() == "O" && buttons[8].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
+        if (buttons[0].getText() == "O" && buttons[4].getText() == "O" && buttons[8].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
+        if (buttons[2].getText() == "O" && buttons[4].getText() == "O" && buttons[6].getText() == "O"
+                && player2turn == false) {
+
+            player2turn = true;
+            player1turn = false;
+
+            this.score2++;
+
+            Timer timer = new Timer(1000, e -> reset());
+            timer.setRepeats(false);
+            timer.start();
+
+        }
+
     }
 
     public void reset() {
@@ -210,10 +326,6 @@ public class TicTacToe implements ActionListener {
             buttons[i].setText("");
         }
 
-        scoreLabel = new JLabel(
-                "Score: " + this.player1Name + " (X): " + this.score1 + " | " +
-                        this.player2Name + " (O): "
-                        + this.score2 + "\n\n " + this.player1Name + "'s turn");
         scoreLabel.setHorizontalAlignment(JLabel.CENTER);
         scoreLabel.setFont(new Font("Arial", Font.BOLD, 30));
         scoreLabel.setOpaque(true);
